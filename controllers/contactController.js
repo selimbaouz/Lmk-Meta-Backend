@@ -14,7 +14,7 @@ export const createContact = (req, res) => {
         },
     })
         .then(function (response) {
-            res.send(response);
+            res.send(response.data);
         })
         .catch(function (error) {
             console.log(error);
