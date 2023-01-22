@@ -21,3 +21,7 @@ export const createContact = (req, res) => {
             res.send(error);
         });
 }
+
+export const getContact = (req, res) => {
+    res.send({message: 'API LMK-META !'})
+}
