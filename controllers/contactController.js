@@ -18,11 +18,11 @@ export const createContact = (req, res) => {
         })
         .catch(function (error) {
             if(error.response.data.code === 15) {
-                res.status(400).send(error.response);
+                res.status(400).send(error.response.data);
             } else if(error.response.data.code === 11) {
-                res.status(400).send(error.response);
+                res.status(400).send(error.response.data);
             } else {
-                res.status(500).send(error.response);
+                res.status(500).send(error.response.data);
             }
         });
 }
