@@ -14,15 +14,15 @@ export const createContact = (req, res) => {
         },
     })
         .then(function (response) {
-            res.send(response.data);
+            res.status(200).send(response.data);
         })
         .catch(function (error) {
             if(error.response.data.code === 15) {
-                res.status(400).send(error.response.data);
+                res.status(400).send(error.response);
             } else if(error.response.data.code === 11) {
-                res.status(402).send(error.response.data);
+                res.status(400).send(error.response);
             } else {
-                res.status(500).send(error.response.data);
+                res.status(500).send(error.response);
             }
         });
 }
